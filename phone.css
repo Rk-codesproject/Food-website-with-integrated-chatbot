@@ -1,0 +1,90 @@
+/*navigation*/
+#navbar{
+    flex-direction: column;
+}
+#navbar ul li a{
+    font-size: 1rem;
+    padding: 0px 7px;
+    padding-bottom: 8px;
+}
+/*home section*/
+#home{
+    height: 370px;
+    padding: 3px 68px;
+}
+#home::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 498px;
+    width: 500px;
+    z-index: -1;
+    opacity: 0.4;
+    
+}
+#navbar::before{
+    height: 135px;
+    width: 610px;
+}
+#home p{
+    font-size: 13px;
+}
+/*services section*/
+#services{
+    flex-direction: column;
+
+}
+#services-container{
+    height: 1500px;
+    width: 500px;
+}
+h1.h-primary.center{
+    align-items: center;
+    height: 53px;
+    width: 480px;
+}
+div#clients{
+    height: 243px;
+    width: 500px;
+}
+div#contact-box{
+    height:1000px;
+    width: 500px;
+}
+
+#services .box{
+    padding: 14px;
+    margin: 2px 15px;
+    margin-bottom: 20px;
+
+}
+/*client section*/
+#clients{
+    flex-wrap: wrap;
+}
+
+#clients img{
+    width: 66px;
+    height: auto;
+}
+#contact::before{
+    height: 1000px;
+    width: 500px;
+}
+
+/*contact us section*/
+#contact-box form{
+    width: 80%;
+}
+/*footer*/
+
+/* utility classes */
+.h-primary{
+    font-size: 26px;
+}
+
+.btn{
+    font-size: 13px;
+    padding: 4px 8px;
+    background-color: rgb(rgb(172, 90, 90), green, blue);
+}
