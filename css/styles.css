@@ -69,7 +69,7 @@ html{
     height: 600px;
     justify-content: center;
     align-items: center;
-    background: url("/receipe.jpg")no-repeat center center/cover;
+    background: url("https://lazaro.co.in/wp-content/uploads/2022/08/web-bnr-fnal-copy222.jpg")no-repeat center center/cover;
     
     /* background-color: red; */
    
@@ -211,9 +211,9 @@ footer{
 .btn{
     padding: 6px 20px;
     border: 2px solid white;
-    background-color: rgb(42, 61, 165);
+    background-color:rgb(136 165 42);
     color: white;
-    margin: 17px;
+    margin-top: 90px;
     border-radius: 6rem;
     font-size: 1.5rem;
     cursor: pointer;

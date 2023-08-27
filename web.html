@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Website</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    /* Main content styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    /* Food menu section */
+    .food-menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .food-item {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .add-to-cart {
+      display: block;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .food-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .add-to-cart{
+      margin-bottom: 35px;
+      background-position: center;
+      position: sticky;
+      background-size: cover;
+      margin-left: 125px;
+    }
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Delicious Food</h1>
+    <p>Discover the taste of happiness!</p>
+  </header>
+
+  <img class ="add-to-cart" src="https://www.gharkiyaad.in/assets/home/Gharkiyaad_homepage_phase2_banner.png">
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Food Menu</h2>
+    <div class="food-menu">
+      <!-- Example food items - Replace with your actual food items -->
+      <div class="food-item">
+        <img src="https://www.mumbailive.com/images/news/images_1517830413799_Pizza%20cover%20final.jpg?fm=webp&w=1368" style="width: 345px; height:345px;" alt="Food Item 1">
+        <h3>PIZZA</h3>
+        <p>Description of Food Item 1</p>
+        <p>Price: $10</p>
+        <button class="add-to-cart" id='pizza' onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://www.geetakiduniya.com/wp-content/uploads/2021/02/pav-bhaji.jpg" alt="Food Item 2">
+        <h3>PAV BHAJI</h3>
+        <p>Description of Food Item 2</p>
+        <p>Price: $12</p>
+        <button class="add-to-cart" id ='pav-bhaji' onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="data:image/jpeg;base64,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" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>MANGO LASSI</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="manngo lassi"  onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>BIRYANI</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="BIRYANI" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__1200_0_0_0_auto.jpg" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>MASALA DOSA</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="masala dosa" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAWlgxIDswRzfhjN4ynaTaDpwx23wjlkxrmA&usqp=CAU" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>RAVA DOSA</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="rava dosa" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://www.cookwithnabeela.com/wp-content/uploads/2023/06/AlooSamosa3.webp" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>SAMOSA</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="SAMOSA" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://assets.gqindia.com/photos/625e4dacfcfaab5b0ecc5ee0/1:1/w_1080,h_1080,c_limit/vada-pav%20(1).jpg" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>VADA PAV</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="vada pav" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <img src="https://imgmedia.lbb.in/media/2021/03/605ae93c24c90e249ad9b93b_1616570684551.jpg" style="width: 345px; height:345px;" alt="Food Item 3">
+        <h3>MISAL PAV</h3>
+        <p>Description of Food Item 3</p>
+        <p>Price: $8</p>
+        <button class="add-to-cart" id="misal pav" onclick="addToCart(id)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <script src ="app.js">
+  </script>
+  <!-- Footer -->
+  <footer>
+    <p>Contact us at contact@example.com | Phone: 123-456-7890</p>
+  </footer>
+</body>
+</html>
