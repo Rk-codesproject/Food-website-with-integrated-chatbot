@@ -10,7 +10,7 @@ app.use(express.static(path.join('./styles.css', 'public')));
 
 // Define a route to serve the index.html file when hitting the root route "/"
 app.get('/', (req, res) => {
-  res.sendFile(path.join('./index.html', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
